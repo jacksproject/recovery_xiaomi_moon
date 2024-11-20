@@ -145,19 +145,21 @@ BOARD_AVB_ENABLE := true
 TARGET_INIT_VENDOR_LIB := libinit_moon
 TARGET_RECOVERY_DEVICE_MODULES := libinit_moon
 
+# Brightness
+TW_NO_SCREEN_BLANK := true
+TW_DEFAULT_BRIGHTNESS := 1000
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 2047
+
 # TWRP Configurations
 TW_FRAMERATE := 90
 TW_Y_OFFSET := 106
 TW_H_OFFSET := 106
 TW_THEME := portrait_hdpi
-TW_DEFAULT_BRIGHTNESS := 1000
-TW_INCLUDE_FASTBOOTD := true
-TARGET_USES_LOGD := true
-TWRP_INCLUDE_LOGCAT := true
+TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_LIBRESETPROP := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_NTFS_3G := true
 TARGET_USES_MKE2FS := true
@@ -168,3 +170,24 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_DEVICE_VERSION := POCO_M6
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
+
+# Format Use MKE2FS
+TARGET_USES_MKE2FS := true
+
+# FastbootD
+TW_INCLUDE_FASTBOOTD := true
+
+# Logcat
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+
+# Support /data/media
+RECOVERY_SDCARD_ON_DATA := true
+
+# USB Configuration
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+TW_HAS_MTP := true
+
+# USB OTG
+TW_USB_STORAGE := true

@@ -21,10 +21,11 @@ service teei_daemon /vendor/bin/teei_daemon \
     -t 98fb95bcb4bf42d26473eae48690d7ea \
     -t 7b66512021214487ba710a51d7ea78fe \
     -t 09010000000000000000000000000000
-    user root
-    group root
+    class core
+    user system
+    group system
     disabled
-    seclabel u:r:recovery:s0
+   # oneshot
 
 on boot
     chown system system /sys/bus/platform/devices/utos/dcih_notify_test
@@ -206,9 +207,6 @@ on post-fs
     restorecon_recursive /vendor/persist
 
 on fs
-    chown system system /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
-    restorecon /mnt/vendor/persist
     chmod 0660 /dev/teei_client
     chown system system /dev/teei_client
     chmod 0660 /dev/teei_config
@@ -223,8 +221,6 @@ on fs
     chown system drmrpc /dev/ut_keymaster
     chmod 0660 /dev/ut_keymaster
     # rpmb device
-    chmod 0660 /dev/0:0:0:49476
-    chown system system /dev/0:0:0:49476
     chmod 0660 /dev/rpmb0
     chown system system /dev/rpmb0
     chmod 0660 /dev/mmcblk0rpmb

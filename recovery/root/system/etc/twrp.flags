@@ -3,12 +3,13 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #<mnt_point>        <type>    <device>                            <device2>                         <mnt_flags and options>
-/metadata           ext4      /dev/block/by-name/metadata                                           flags=display="metadata";backup=1
+/metadata           ext4      /dev/block/by-name/metadata                                           flags=display="Metadata";backup=1
+/data               ext4      /dev/block/by-name/userdata                                           flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
 /data               f2fs      /dev/block/by-name/userdata                                           flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
-/cache              ext4      /dev/block/by-name/rescue                                             flags=display="cache";wipeingui;wipeduringfactoryreset
+/cache              ext4      /dev/block/by-name/rescue                                             flags=display="Cache";wipeingui;wipeduringfactoryreset
 
 # Boot
-/boot               emmc      /dev/block/by-name/boot                                               flags=display="boot";slotselect;backup=1;flashimg=1
+/boot               emmc      /dev/block/by-name/boot                                               flags=display="Boot";slotselect;backup=1;flashimg=1
 /vendor_boot        emmc      /dev/block/by-name/vendor_boot                                        flags=display="vendor_boot";slotselect;backup=1;flashimg=1
 /dtbo               emmc      /dev/block/by-name/dtbo                                               flags=display="dtbo";slotselect;backup=1;flashimg=1
 /vbmeta             emmc      /dev/block/by-name/vbmeta                                             flags=display="vbmeta";slotselect;backup=1;flashimg=1
@@ -18,8 +19,8 @@
 /misc               emmc      /dev/block/by-name/misc                                               flags=display="misc";backup=1
 
 # Persistent Firmware & Properties
-/persist            ext4      /dev/block/by-name/persist                                            flags=display="persist"
-/persist_image      emmc      /dev/block/by-name/persist                                            flags=display="persist";backup=1;flashimg=1
+/persist            ext4      /dev/block/by-name/persist                                            flags=display="Persist"
+/persist_image      emmc      /dev/block/by-name/persist                                            flags=display="Persist";backup=1;flashimg=1
 
 # Firmware partitions
 /para               emmc      /dev/block/by-name/para                                               flags=display="para"
@@ -57,4 +58,4 @@
 /pi_img             emmc      /dev/block/by-name/pi_img                                             flags=display="pi_img"
 
 # Removable storage
-/usb_otg            auto      /dev/block/sdd1                                                       flags=display="usb-otg";storage;wipeingui;removable;fsflags=utf8
+/usb_otg            auto      /dev/block/sdd1                                                       flags=display="USB-OTG";storage;wipeingui;removable;fsflags=utf8

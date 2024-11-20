@@ -1,15 +1,26 @@
-# Fstab
-ro.postinstall.fstab.prefix=/system
+# ADB
+ro.adb.secure=0
 
-# USB MTP
-ro.sys.usb.storage.type=mtp
+# Board
+ro.product.device=moon
+ro.build.product=moon
 
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
+
+# fstab
+ro.postinstall.fstab.prefix=/system
+
+# Gatekeeper
+ro.hardware.gatekeeper=beanpod
+
+# Platform
+ro.mediatek.platform=MT6768
+ro.hardware=mt6768
 
 # TEE
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_microtrust_tee_support=1
 
-# Gatekeeper
-ro.hardware.gatekeeper=beanpod
+# USB MTP
+ro.sys.usb.storage.type=mtp
