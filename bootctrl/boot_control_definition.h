@@ -87,7 +87,7 @@ struct bootloader_control {
     // Version of struct being used (see BOOT_CTRL_VERSION).
     uint8_t version;
     // Number of slots being managed.
-    uint8_t nb_slot : 3;
+    uint8_t nb_slot : 2;
     // Number of times left attempting to boot recovery.
     uint8_t recovery_tries_remaining : 3;
     // Status of any pending snapshot merge of dynamic partitions.
