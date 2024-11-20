@@ -35,7 +35,7 @@ AB_OTA_PARTITIONS += \
     vendor_dlkm \
     vbmeta_system \
     vbmeta_vendor
-    
+
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
