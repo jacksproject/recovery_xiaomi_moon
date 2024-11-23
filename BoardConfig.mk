@@ -99,7 +99,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 # Module
-TW_LOAD_VENDOR_MODULES := "nt36672c_spi.ko xiaomi_touch.ko focaltech_tp.ko flashlight.ko gt9886.ko gt1151.ko"
+TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -168,7 +169,6 @@ TW_MAX_BRIGHTNESS := 2047
 # TWRP Configurations
 TW_FRAMERATE := 90
 TW_THEME := portrait_hdpi
-TW_STATUS_ICONS_ALIGN := center
 TW_Y_OFFSET := 99
 TW_H_OFFSET := -99
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -186,9 +186,8 @@ TW_DEVICE_VERSION := JacksProject
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-TW_INCLUDE_PYTHON := true
 TW_EXCLUDE_TWRPAPP := true
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone7/temp"
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone20/temp"
 TW_FORCE_KEYMASTER_VER := true
 
 # Format Use MKE2FS
@@ -211,3 +210,8 @@ TW_HAS_MTP := true
 
 # USB OTG
 TW_USB_STORAGE := true
+
+# Include BASH,NANO,Python
+TW_INCLUDE_BASH := true
+TW_INCLUDE_NANO := true
+TW_INCLUDE_PYTHON := true

@@ -100,3 +100,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
+# Copy modules for depmod
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/recovery/root/lib/modules,$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules)
