@@ -70,10 +70,8 @@
 	<interface>
             <name>IHealth</name>
             <instance>default</instance>
-            <instance>backup</instance>
         </interface>
         <fqname>@2.0::IHealth/default</fqname>
-        <fqname>@2.0::IHealth/backup</fqname>
     </hal>
     <hal format="hidl" optional="true"> 
         <name>android.hardware.keymaster</name>
