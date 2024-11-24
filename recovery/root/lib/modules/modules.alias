@@ -127,8 +127,9 @@ alias of:N*T*Chuaqin,hq_chg_managerC* main_chg
 alias platform:mt6358-regulator mt6358_regulator
 alias of:N*T*Cti,syscon-reset reset_ti_syscon
 alias of:N*T*Cti,syscon-resetC* reset_ti_syscon
-alias of:N*T*Csy,subpmic_chg_sy subpmic_sy_charger
-alias of:N*T*Csy,subpmic_chg_syC* subpmic_sy_charger
+alias i2c:rt1711h tcpc_rt1711h
+alias i2c:rt1715 tcpc_rt1711h
+alias i2c:rt1716 tcpc_rt1711h
 alias of:N*T*Cn19a-43-02-0c-dsc-vdo,lcm panel_n19a_43_02_0c_dsc_vdo
 alias of:N*T*Cn19a-43-02-0c-dsc-vdo,lcmC* panel_n19a_43_02_0c_dsc_vdo
 alias of:N*T*Cmediatek,mtk_ctd mtk_chg_type_det
@@ -216,7 +217,6 @@ alias of:N*T*Cmediatek,srclken-rc clkbuf
 alias of:N*T*Cmediatek,srclken-rcC* clkbuf
 alias of:N*T*CHUAQIN,subpmic_chargerpump subpmic_chargerpump
 alias of:N*T*CHUAQIN,subpmic_chargerpumpC* subpmic_chargerpump
-alias i2c:sc660x tcpc_sc660x
 alias of:N*T*Cmediatek,mt6768-mmqos mmqos_mt6768
 alias of:N*T*Cmediatek,mt6768-mmqosC* mmqos_mt6768
 alias of:N*T*Cmediatek,spi_slave spi_slave
@@ -263,11 +263,6 @@ alias of:N*T*Cmediatek,mt6359p-lbat_service pmic_lbat_service
 alias of:N*T*Cmediatek,mt6359p-lbat_serviceC* pmic_lbat_service
 alias of:N*T*Cmediatek,mt6375-lbat-service pmic_lbat_service
 alias of:N*T*Cmediatek,mt6375-lbat-serviceC* pmic_lbat_service
-alias i2c:ba41a tcpc_ba41a
-alias i2c:rt1715 tcpc_ba41a
-alias i2c:rt1716 tcpc_ba41a
-alias of:N*T*Csy,ba41a tcpc_ba41a
-alias of:N*T*Csy,ba41aC* tcpc_ba41a
 alias platform:mtk-spi spi_mt65xx
 alias of:N*T*Cmediatek,mt2701-spi spi_mt65xx
 alias of:N*T*Cmediatek,mt2701-spiC* spi_mt65xx
@@ -780,8 +775,6 @@ alias of:N*T*Carm,sec-rngC* sec_rng
 alias platform:stick stick_verify
 alias of:N*T*Cst,stick stick_verify
 alias of:N*T*Cst,stickC* stick_verify
-alias of:N*T*Csy,subpmic_core_sy subpmic_sy
-alias of:N*T*Csy,subpmic_core_syC* subpmic_sy
 alias of:N*T*Cti,bq25960-standalone bq25960_charger
 alias of:N*T*Cti,bq25960-standaloneC* bq25960_charger
 alias of:N*T*Cti,bq25960-master bq25960_charger
