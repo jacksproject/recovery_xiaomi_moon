@@ -100,7 +100,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 # Module
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
+TW_LOAD_VENDOR_MODULES := "focaltech_tp.ko nt36672c_spi.ko"
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -171,6 +171,7 @@ TW_FRAMERATE := 90
 TW_THEME := portrait_hdpi
 TW_Y_OFFSET := 99
 TW_H_OFFSET := -99
+TWRP_EVENT_LOGGING := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
@@ -214,4 +215,11 @@ TW_USB_STORAGE := true
 # Include BASH,NANO,Python
 TW_INCLUDE_BASH := true
 TW_INCLUDE_NANO := true
-TW_INCLUDE_PYTHON := true
+#TW_INCLUDE_PYTHON := true
+
+# Battery correct percentage
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/capacity
+
+# Arrange Status bar
+TW_CUSTOM_CPU_POS := 290
+TW_CUSTOM_CLOCK_POS := 40
