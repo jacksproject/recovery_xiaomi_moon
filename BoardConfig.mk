@@ -100,7 +100,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 # Module
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES := "focaltech_tp.ko nt36672c_spi.ko"
+TW_LOAD_VENDOR_MODULES := "focaltech_tp.ko fpsgo.ko gt1151.ko gt9886.ko mtk_fpsgo.ko mtk_gpu_hal.ko mtk_gpufreq_mt6768.ko mtk_gpufreq_wrapper.ko nt36672c_spi.ko tpd_notify.ko xiaomi_touch.ko"
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
