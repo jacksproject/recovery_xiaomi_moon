@@ -1,0 +1,11 @@
+focaltech_tp.ko
+fpsgo.ko
+gt1151.ko
+gt9886.ko
+mtk_fpsgo.ko
+mtk_gpu_hal.ko
+mtk_gpufreq_mt6768.ko
+mtk_gpufreq_wrapper.ko
+nt36672c_spi.ko
+tpd_notify.ko
+xiaomi_touch.ko

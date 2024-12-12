@@ -36,7 +36,7 @@ $(call inherit-product, device/xiaomi/moon/device.mk)
 PRODUCT_DEVICE := moon
 PRODUCT_NAME := twrp_moon
 PRODUCT_BRAND := POCO
-PRODUCT_MODEL := 24040RN64Y
+PRODUCT_MODEL := POCO M6
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
