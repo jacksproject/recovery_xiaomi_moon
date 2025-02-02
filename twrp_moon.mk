@@ -26,6 +26,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Inherit from android-common
+$(call inherit-product, device/android/common/device.mk)
+
 # Configure twrp config common.mk
 $(call inherit-product, vendor/twrp/config/common.mk)
 
@@ -36,10 +39,12 @@ $(call inherit-product, device/xiaomi/moon/device.mk)
 PRODUCT_DEVICE := moon
 PRODUCT_NAME := twrp_moon
 PRODUCT_BRAND := POCO
-PRODUCT_MODEL := 24040RN64Y
+PRODUCT_MODEL := POCO M6
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+ENABLE_VIRTUAL_AB := true
 
 # Hide Reflash TWRP
 PRODUCT_PROPERTY_OVERRIDES += ro.twrp.vendor_boot=true
